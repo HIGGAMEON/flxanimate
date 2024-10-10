@@ -594,12 +594,20 @@ class FlxAnimate extends FlxSprite
 
 		if(trimmed == '.json') //Path is json
 		{
-			myData = sys.io.File.getContent(pathOrStr);
+			#if sys
+			myData = sys.io.File.getContent(pathOrStr); //is a path
+			#else
+			myData = openfl.Assets.getText(pathOrStr); //is a path
+			#end
 			isXml = false;
 		}
 		else if (trimmed.substr(1) == '.xml') //Path is xml
 		{
-			myData = sys.io.File.getContent(pathOrStr);
+			#if sys
+			myData = sys.io.File.getContent(pathOrStr); //is a path
+			#else
+			myData = openfl.Assets.getText(pathOrStr); //is a path
+			#end
 			isXml = true;
 		}
 		myData = _removeBOM(myData);
