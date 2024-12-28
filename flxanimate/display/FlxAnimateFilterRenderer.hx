@@ -17,6 +17,8 @@ import openfl.geom.Matrix;
 import openfl.geom.ColorTransform;
 import openfl.geom.Point;
 
+import lime.graphics.utils.ImageCanvasUtil
+
 import openfl.display._internal.Context3DGraphics;
 #if (js && html5)
 import openfl.display.CanvasRenderer;
@@ -153,7 +155,8 @@ class FlxAnimateFilterRenderer
 
 		#if (js && html5)
 		ImageCanvasUtil.convertToCanvas(bmp.image);
-		var renderer = new CanvasRenderer(bmp.image.buffer.__srcContext);
+		@:privateAccess
+			var renderer = new CanvasRenderer(bmp.image.buffer.__srcContext);
 		#else
 		var renderer = new CairoRenderer(new Cairo(bmp.getSurface()));
 		#end
