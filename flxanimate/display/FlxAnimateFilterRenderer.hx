@@ -17,7 +17,7 @@ import openfl.geom.Matrix;
 import openfl.geom.ColorTransform;
 import openfl.geom.Point;
 
-import lime.graphics.utils.ImageCanvasUtil
+import lime.graphics.utils.ImageCanvasUtil;
 
 import openfl.display._internal.Context3DGraphics;
 #if (js && html5)
